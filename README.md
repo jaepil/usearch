@@ -52,7 +52,7 @@ Linux • MacOS • Windows • iOS • Android • WebAssembly •
 - ✅ [Trusted](#integrations) by giants like Google and DBs like [ClickHouse][clickhouse-docs] & [DuckDB][duckdb-docs].
 - ✅ [SIMD][simd]-optimized and [user-defined metrics](#user-defined-functions) with JIT compilation.
 - ✅ Hardware-agnostic `f16` & `i8` - [half-precision & quarter-precision support](#memory-efficiency-downcasting-and-quantization).
-- ✅ [View large indexes from disk](#serving-index-from-disk) without loading into RAM.
+- ✅ [View large indexes from disk](#serialization--serving-index-from-disk) without loading into RAM.
 - ✅ Heterogeneous lookups, renaming/relabeling, and on-the-fly deletions.
 - ✅ Binary Tanimoto and Sorensen coefficients for [Genomics and Chemistry applications](#usearch--rdkit--molecular-search).
 - ✅ Space-efficient point-clouds with `uint40_t`, accommodating 4B+ size.
@@ -544,7 +544,7 @@ doi = {10.5281/zenodo.7949416},
 author = {Vardanian, Ash},
 title = {{USearch by Unum Cloud}},
 url = {https://github.com/unum-cloud/usearch},
-version = {2.16.0},
+version = {2.16.2},
 year = {2023},
 month = oct,
 }
