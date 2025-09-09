@@ -58,6 +58,7 @@ USEARCH_EXPORT typedef enum usearch_scalar_kind_t {
     usearch_scalar_f16_k = 3,
     usearch_scalar_i8_k = 4,
     usearch_scalar_b1_k = 5,
+    usearch_scalar_bf16_k = 6,
 } usearch_scalar_kind_t;
 
 USEARCH_EXPORT typedef struct usearch_init_options_t {
@@ -477,8 +478,7 @@ USEARCH_EXPORT void usearch_exact_search(                            //
  *  @param[inout] index The handle to the USearch index to be modified.
  *  @param[out] error Pointer to a string where the error message will be stored, if an error occurs.
  */
-USEARCH_EXPORT void usearch_clear(usearch_index_t index,
-                                  usearch_error_t* error);
+USEARCH_EXPORT void usearch_clear(usearch_index_t index, usearch_error_t* error);
 
 #ifdef __cplusplus
 }
