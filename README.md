@@ -20,20 +20,20 @@ Similarity Search & Clustering Engine for <a href="https://github.com/ashvardani
 <p align="center">
 Spatial • Binary • Probabilistic • User-Defined Metrics
 <br/>
-<a href="https://unum-cloud.github.io/usearch/cpp">C++11</a> •
-<a href="https://unum-cloud.github.io/usearch/python">Python 3</a> •
-<a href="https://unum-cloud.github.io/usearch/javascript">JavaScript</a> •
-<a href="https://unum-cloud.github.io/usearch/java">Java</a> •
-<a href="https://unum-cloud.github.io/usearch/rust">Rust</a> •
-<a href="https://unum-cloud.github.io/usearch/c">C99</a> •
-<a href="https://unum-cloud.github.io/usearch/objective-c">Objective-C</a> •
-<a href="https://unum-cloud.github.io/usearch/swift">Swift</a> •
-<a href="https://unum-cloud.github.io/usearch/csharp">C#</a> •
-<a href="https://unum-cloud.github.io/usearch/golang">Go</a> •
-<a href="https://unum-cloud.github.io/usearch/wolfram">Wolfram</a>
+<a href="https://unum-cloud.github.io/USearch/cpp">C++11</a> •
+<a href="https://unum-cloud.github.io/USearch/python">Python 3</a> •
+<a href="https://unum-cloud.github.io/USearch/javascript">JavaScript</a> •
+<a href="https://unum-cloud.github.io/USearch/java">Java</a> •
+<a href="https://unum-cloud.github.io/USearch/rust">Rust</a> •
+<a href="https://unum-cloud.github.io/USearch/c">C99</a> •
+<a href="https://unum-cloud.github.io/USearch/objective-c">Objective-C</a> •
+<a href="https://unum-cloud.github.io/USearch/swift">Swift</a> •
+<a href="https://unum-cloud.github.io/USearch/csharp">C#</a> •
+<a href="https://unum-cloud.github.io/USearch/golang">Go</a> •
+<a href="https://unum-cloud.github.io/USearch/wolfram">Wolfram</a>
 <br/>
 Linux • macOS • Windows • iOS • Android • WebAssembly •
-<a href="https://unum-cloud.github.io/usearch/sqlite">SQLite</a>
+<a href="https://unum-cloud.github.io/USearch/sqlite">SQLite</a>
 </p>
 
 <div align="center">
@@ -57,7 +57,7 @@ Linux • macOS • Windows • iOS • Android • WebAssembly •
 - ✅ Binary Tanimoto and Sorensen coefficients for [Genomics and Chemistry applications](#usearch--rdkit--molecular-search).
 - ✅ Space-efficient point-clouds with `uint40_t`, accommodating 4B+ size.
 - ✅ Compatible with OpenMP and custom "executors" for fine-grained parallelism.
-- ✅ [Semantic Search](#usearch--ai--multi-modal-semantic-search) and [Joins](#joins-one-to-one-one-to-many-and-many-to-many-mappings).
+- ✅ [Semantic Search](#usearch--uform--ucall--multimodal-semantic-search) and [Joins](#joins-one-to-one-one-to-many-and-many-to-many-mappings).
 - 🔄 Near-real-time [clustering and sub-clustering](#clustering) for Tens or Millions of clusters.
 
 [faiss]: https://github.com/facebookresearch/faiss
@@ -195,7 +195,7 @@ When compared to FAISS's `IndexFlatL2` in Google Colab, __[USearch may offer up 
 
 While most vector search packages concentrate on just two metrics, "Inner Product distance" and "Euclidean distance", USearch allows arbitrary user-defined metrics.
 This flexibility allows you to customize your search for various applications, from computing geospatial coordinates with the rare [Haversine][haversine] distance to creating custom metrics for composite embeddings from multiple AI models, like joint image-text embeddings.
-You can use [Numba][numba], [Cppyy][cppyy], or [PeachPy][peachpy] to define your [custom metric even in Python](https://unum-cloud.github.io/usearch/python#user-defined-metrics-and-jit-in-python):
+You can use [Numba][numba], [Cppyy][cppyy], or [PeachPy][peachpy] to define your [custom metric even in Python](https://unum-cloud.github.io/USearch/python#user-defined-metrics-and-jit-in-python):
 
 ```py
 from numba import cfunc, types, carray
@@ -354,16 +354,16 @@ By now, the core functionality is supported across all bindings.
 Broader functionality is ported per request.
 In some cases, like Batch operations, feature parity is meaningless, as the host language has full multi-threading capabilities and the USearch index structure is concurrent by design, so the users can implement batching/scheduling/load-balancing in the most optimal way for their applications.
 
-|                         | C++ 11 | Python 3 | C 99  | Java  | JavaScript | Rust  | Go     | Swift |
-| :---------------------- | :----: | :------: | :---: | :---: | :--------: | :---: | :----: | :---: |
-| Add, search, remove     |   ✅    |    ✅     |   ✅   |   ✅   |     ✅      |   ✅   |   ✅    |   ✅   |
-| Save, load, view        |   ✅    |    ✅     |   ✅   |   ✅   |     ✅      |   ✅   |   ✅    |   ✅   |
-| User-defined metrics    |   ✅    |    ✅     |   ✅   |   ❌   |     ❌      |   ❌   |   ❌    |   ❌   |
-| Batch operations        |   ❌    |    ✅     |   ❌   |   ✅   |     ✅      |   ❌   |   ❌    |   ❌   |
-| Filter predicates       |   ✅    |    ❌     |   ✅   |   ❌   |     ❌      |   ✅   |   ❌    |   ❌   |
-| Joins                   |   ✅    |    ✅     |   ❌   |   ❌   |     ❌      |   ❌   |   ❌    |   ❌   |
-| Variable-length vectors |   ✅    |    ❌     |   ❌   |   ❌   |     ❌      |   ❌   |   ❌    |   ❌   |
-| 4B+ capacities          |   ✅    |    ❌     |   ❌   |   ❌   |     ❌      |   ❌   |   ❌    |   ❌   |
+|                         | C++ 11 | Python 3 | C 99  | Java  | JavaScript | Rust  |  Go   | Swift |
+| :---------------------- | :----: | :------: | :---: | :---: | :--------: | :---: | :---: | :---: |
+| Add, search, remove     |   ✅    |    ✅     |   ✅   |   ✅   |     ✅      |   ✅   |   ✅   |   ✅   |
+| Save, load, view        |   ✅    |    ✅     |   ✅   |   ✅   |     ✅      |   ✅   |   ✅   |   ✅   |
+| User-defined metrics    |   ✅    |    ✅     |   ✅   |   ❌   |     ❌      |   ✅   |   ❌   |   ❌   |
+| Batch operations        |   ❌    |    ✅     |   ❌   |   ✅   |     ✅      |   ❌   |   ❌   |   ❌   |
+| Filter predicates       |   ✅    |    ❌     |   ✅   |   ❌   |     ❌      |   ✅   |   ❌   |   ✅   |
+| Joins                   |   ✅    |    ✅     |   ❌   |   ❌   |     ❌      |   ❌   |   ❌   |   ❌   |
+| Variable-length vectors |   ✅    |    ❌     |   ❌   |   ❌   |     ❌      |   ❌   |   ❌   |   ❌   |
+| 4B+ capacities          |   ✅    |    ❌     |   ❌   |   ❌   |     ❌      |   ❌   |   ❌   |   ❌   |
 
 ## Application Examples
 
@@ -534,13 +534,14 @@ index = Index(ndim=ndim, metric=CompiledMetric(
 - [x] TiDB & TiFlash: [C++](https://github.com/pingcap/tiflash), [announcement](https://www.pingcap.com/article/introduce-vector-search-indexes-in-tidb/).
 - [x] YugaByte: [C++](https://github.com/yugabyte/yugabyte-db/blob/366b9f5e3c4df3a1a17d553db41d6dc50146f488/src/yb/vector_index/usearch_wrapper.cc).
 - [x] Google: [UniSim](https://github.com/google/unisim), [RetSim](https://arxiv.org/abs/2311.17264) paper.
-- [x] Memgraph: [C++](https://github.com/memgraph/memgraph/blob/784dd8520f65050d033aea8b29446e84e487d091/src/storage/v2/indices/vector_index.cpp), [announcement](https://memgraph.com/blog/simplify-data-retrieval-memgraph-vector-search).
+- [x] MemGraph: [C++](https://github.com/memgraph/memgraph/blob/784dd8520f65050d033aea8b29446e84e487d091/src/storage/v2/indices/vector_index.cpp), [announcement](https://memgraph.com/blog/simplify-data-retrieval-memgraph-vector-search).
 - [x] LanternDB: [C++](https://github.com/lanterndata/lantern), [Rust](https://github.com/lanterndata/lantern_extras), [docs](https://lantern.dev/blog/hnsw-index-creation).
 - [x] LangChain: [Python](https://github.com/langchain-ai/langchain/releases/tag/v0.0.257) and [JavaScript](https://github.com/hwchase17/langchainjs/releases/tag/0.0.125).
 - [x] Microsoft Semantic Kernel: [Python](https://github.com/microsoft/semantic-kernel/releases/tag/python-0.3.9.dev) and C#.
 - [x] GPTCache: [Python](https://github.com/zilliztech/GPTCache/releases/tag/0.1.29).
 - [x] Sentence-Transformers: Python [docs](https://www.sbert.net/docs/package_reference/quantization.html#sentence_transformers.quantization.semantic_search_usearch).
 - [x] Pathway: [Rust](https://github.com/pathwaycom/pathway).
+- [x] Vald: [GoLang](https://github.com/vdaas/vald).
   
 
 ## Citations
@@ -551,7 +552,7 @@ doi = {10.5281/zenodo.7949416},
 author = {Vardanian, Ash},
 title = {{USearch by Unum Cloud}},
 url = {https://github.com/unum-cloud/usearch},
-version = {2.21.0},
+version = {2.24.0},
 year = {2023},
 month = oct,
 }
